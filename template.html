@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Luu Hoang Nhan</title>
+    <meta
+      name="description"
+      content="Professional CV of Luu Hoang Nhan - Software Engineer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/icon/logo.svg" />
+
+    <!-- Google Fonts: EB Garamond (Classic Serif) & Inter (Modern Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- CSS Reset & Variables --- */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        /* Fonts */
+        --font-serif: "EB Garamond", Georgia, "Times New Roman", serif;
+        --font-sans:
+          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        --base-font-family: var(--font-serif);
+
+        /* Accent Colors */
+        --accent-black: #111827;
+        --accent-crimson: #a51c30; /* Harvard Crimson */
+        --accent-navy: #1e3a8a; /* Elegant Navy */
+        --accent-color: var(--accent-black);
+
+        /* Light Theme variables (default) */
+        --bg-color: #f3f4f6;
+        --paper-bg: #ffffff;
+        --text-color: #1f2937;
+        --text-muted: #4b5563;
+        --border-color: #d1d5db;
+        --shadow-color: rgba(0, 0, 0, 0.08);
+      }
+
+      /* Dark Theme variables */
+      body.dark-theme {
+        --bg-color: #0f172a;
+        --paper-bg: #1e293b;
+        --text-color: #f1f5f9;
+        --text-muted: #cbd5e1;
+        --border-color: #475569;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+      }
+
+      body.sans-font {
+        --base-font-family: var(--font-sans);
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: var(--base-font-family);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          font-family 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* --- Interactive Control Panel --- */
+      .control-panel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--paper-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 12px 24px;
+        width: 820px;
+        max-width: 100%;
+        box-shadow: 0 4px 20px var(--shadow-color);
+        font-family: var(--font-sans);
+        font-size: 13px;
+        font-weight: 500;
+        z-index: 100;
+        position: sticky;
+        top: 20px;
+        margin-bottom: 25px;
+        transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .control-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .control-label {
+        color: var(--text-muted);
+        font-weight: 600;
+        margin-right: 4px;
+      }
+
+      .control-btn {
+        background-color: transparent;
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        font-family: var(--font-sans);
+        transition: all 0.2s ease;
+      }
+
+      .control-btn:hover {
+        background-color: var(--border-color);
+      }
+
+      .control-btn.active {
+        background-color: var(--text-color);
+        border-color: var(--text-color);
+        color: var(--paper-bg);
+      }
+
+      .accent-dot-wrapper {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+
+      .accent-dot {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .accent-dot:hover {
+        transform: scale(1.2);
+      }
+
+      .accent-dot.active {
+        border-color: var(--text-color);
+        transform: scale(1.1);
+      }
+
+      .accent-dot.black {
+        background-color: #111827;
+      }
+      .accent-dot.crimson {
+        background-color: #a51c30;
+      }
+      .accent-dot.navy {
+        background-color: #1e3a8a;
+      }
+
+      .print-btn {
+        display: flex;
+        align-items: center;
+        background-color: var(--accent-color);
+        color: #ffffff;
+        border: none;
+        padding: 7px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 12px;
+        font-family: var(--font-sans);
+        text-decoration: none;
+        transition:
+          opacity 0.2s ease,
+          background-color 0.3s ease;
+      }
+
+      .print-btn:hover {
+        opacity: 0.9;
+      }
+
+      .print-btn svg {
+        margin-right: 6px;
+      }
+
+      /* --- Resume Paper Style --- */
+      .resume-paper {
+        width: 820px;
+        max-width: 100%;
+        background-color: var(--paper-bg);
+        box-shadow: 0 10px 30px var(--shadow-color);
+        padding: 1in 0.85in 1in 0.85in;
+        transition:
+          background-color 0.3s ease,
+          box-shadow 0.3s ease;
+        position: relative;
+      }
+
+      /* --- Resume Header --- */
+      .resume-header {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      .resume-header h1 {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: var(--accent-color);
+        margin-bottom: 6px;
+        transition: color 0.3s ease;
+      }
+
+      body.sans-font .resume-header h1 {
+        font-size: 24px;
+        letter-spacing: 1px;
+      }
+
+      .resume-header .subtitle {
+        font-family: var(--font-sans);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 12px;
+      }
+
+      .resume-header .contact-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        font-size: 13px;
+        color: var(--text-color);
+      }
+
+      body.sans-font .resume-header .contact-links {
+        font-size: 12px;
+      }
+
+      .resume-header .contact-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--text-muted);
+        transition: border-color 0.2s ease;
+      }
+
+      .resume-header .contact-links a:hover {
+        border-bottom: 1px solid var(--accent-color);
+      }
+
+      .resume-header .contact-links .bullet {
+        color: var(--text-muted);
+        font-weight: bold;
+      }
+
+      /* --- Sections Layout --- */
+      .resume-section {
+        margin-top: 24px;
+      }
+
+      .resume-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--accent-color);
+        border-bottom: 1px solid var(--accent-color);
+        padding-bottom: 3px;
+        margin-bottom: 14px;
+        transition:
+          color 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      body.sans-font .resume-section-title {
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+
+      /* --- Summary Section --- */
+      .summary-text {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+      }
+
+      body.sans-font .summary-text {
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      /* --- Experience & Education Entry --- */
+      .resume-entry {
+        margin-bottom: 18px;
+      }
+
+      .resume-entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-weight: 700;
+        font-size: 14.5px;
+      }
+
+      body.sans-font .entry-header {
+        font-size: 13.5px;
+      }
+
+      .entry-sub-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        /* font-style: italic; */
+        font-size: 13.5px;
+        margin-bottom: 6px;
+        color: var(--text-muted);
+      }
+
+      body.sans-font .entry-sub-header {
+        font-size: 12.5px;
+      }
+
+      .entry-left-bold,
+      .entry-right-bold {
+        font-weight: 700;
+      }
+
+      .entry-right-bold,
+      .entry-right-italic {
+        text-align: right;
+        flex-shrink: 0;
+      }
+
+      .entry-desc {
+        font-size: 13.5px;
+        line-height: 1.45;
+        margin-bottom: 6px;
+        text-align: justify;
+      }
+
+      body.sans-font .entry-desc {
+        font-size: 12.5px;
+      }
+
+      /* --- Bullet Lists --- */
+      .entry-list {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .entry-list li {
+        font-size: 13.5px;
+        line-height: 1.45;
+        margin-bottom: 4px;
+        text-align: justify;
+        list-style-type: disc;
+      }
+
+      body.sans-font .entry-list li {
+        font-size: 12.5px;
+      }
+
+      .entry-list li::marker {
+        color: var(--accent-color);
+        font-size: 10px;
+      }
+
+      /* Subproject blocks in gumi Viet Nam */
+      .subproject-block {
+        margin-top: 10px;
+        margin-bottom: 12px;
+        padding-left: 10px;
+        border-left: 2px solid var(--border-color);
+      }
+
+      .subproject-title {
+        font-weight: 700;
+        font-size: 13.5px;
+        margin-bottom: 4px;
+        color: var(--text-color);
+      }
+
+      body.sans-font .subproject-title {
+        font-size: 12.5px;
+      }
+
+      /* --- Technical Skills Section --- */
+      .skills-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .skills-item {
+        font-size: 13.5px;
+        line-height: 1.45;
+      }
+
+      body.sans-font .skills-item {
+        font-size: 12.5px;
+      }
+
+      .skills-category {
+        font-weight: 700;
+      }
+
+      /* --- Capabilities Grid --- */
+      .capabilities-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 24px;
+      }
+
+      .capability-card {
+        font-size: 13.5px;
+        line-height: 1.4;
+        text-align: justify;
+      }
+
+      body.sans-font .capability-card {
+        font-size: 12.5px;
+      }
+
+      .capability-card strong {
+        font-weight: 700;
+        color: var(--accent-color);
+      }
+
+      /* --- Screen Responsiveness --- */
+      @media screen and (max-width: 850px) {
+        body {
+          padding: 15px 10px;
+        }
+
+        .control-panel {
+          width: 100%;
+          border-radius: 8px;
+          padding: 10px 14px;
+          top: 10px;
+          margin-bottom: 15px;
+        }
+
+        .control-group {
+          gap: 4px;
+        }
+
+        .control-label {
+          display: none; /* Hide labels to save space */
+        }
+
+        .resume-paper {
+          padding: 30px 20px;
+          width: 100%;
+          box-shadow: none;
+        }
+
+        .entry-header,
+        .entry-sub-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .entry-right-bold,
+        .entry-right-italic {
+          text-align: left;
+          margin-top: 2px;
+        }
+
+        .capabilities-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+      }
+
+      /* --- Strict Print Layout Optimization --- */
+      @media print {
+        body {
+          background-color: #ffffff !important;
+          color: #000000 !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          font-family: var(
+            --font-serif
+          ) !important; /* Force Garamond on print */
+        }
+
+        body.sans-font-print {
+          /* In case they want sans printed, but default to serif */
+          font-family: var(--font-sans) !important;
+        }
+
+        .control-panel {
+          display: none !important; /* Hide web control panel */
+        }
+
+        .resume-paper {
+          width: 100% !important;
+          max-width: 100% !important;
+          padding: 0.75in !important; /* Standard print margin */
+          box-shadow: none !important;
+          background-color: #ffffff !important;
+        }
+
+        .resume-header h1,
+        .resume-section-title,
+        .entry-left-bold,
+        .capability-card strong,
+        .entry-list li::marker {
+          color: #000000 !important; /* Strict Monochrome */
+          border-color: #000000 !important;
+        }
+
+        .resume-header .contact-links a {
+          color: #000000 !important;
+          border-bottom: none !important;
+        }
+
+        /* Prevent orphan headings and entries across page splits */
+        .resume-section {
+          page-break-inside: auto;
+        }
+
+        .resume-entry,
+        .capability-card,
+        .skills-item {
+          page-break-inside: avoid;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .resume-section-title {
+          page-break-after: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Interactive Control Panel (Web Only) -->
+    <div class="control-panel" id="web-control-panel">
+      <div class="control-group">
+        <span class="control-label">Typography:</span>
+        <button
+          id="btn-font-serif"
+          class="control-btn active"
+          onclick="setFontFamily('serif')"
+        >
+          Serif
+        </button>
+        <button
+          id="btn-font-sans"
+          class="control-btn"
+          onclick="setFontFamily('sans')"
+        >
+          Sans-Serif
+        </button>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">Color Theme:</span>
+        <button
+          id="btn-theme-light"
+          class="control-btn active"
+          onclick="setTheme('light')"
+        >
+          Light
+        </button>
+        <button
+          id="btn-theme-dark"
+          class="control-btn"
+          onclick="setTheme('dark')"
+        >
+          Dark
+        </button>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">Accent Style:</span>
+        <div class="accent-dot-wrapper">
+          <div
+            id="dot-black"
+            class="accent-dot black active"
+            onclick="setAccent('black')"
+            title="Academic Black"
+          ></div>
+          <div
+            id="dot-crimson"
+            class="accent-dot crimson"
+            onclick="setAccent('crimson')"
+            title="Harvard Crimson"
+          ></div>
+          <div
+            id="dot-navy"
+            class="accent-dot navy"
+            onclick="setAccent('navy')"
+            title="Elegant Navy"
+          ></div>
+        </div>
+      </div>
+
+      <a
+        href="assets/CV_LUU_HOANG_NHAN.pdf"
+        download="CV_LUU_HOANG_NHAN.pdf"
+        id="btn-download"
+        class="print-btn"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
+          />
+          <path
+            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
+          />
+        </svg>
+        Download PDF
+      </a>
+    </div>
+
+    <!-- Resume Paper Wrapper -->
+    <div class="resume-paper" id="resume-sheet">
+      <!-- HEADER -->
+      <header class="resume-header">
+        <h1>LUU HOANG NHAN</h1>
+        <div class="subtitle">Software Engineer</div>
+        <div class="contact-links">
+          <a href="mailto:luuhoangnhan1080@gmail.com"
+            >luuhoangnhan1080@gmail.com</a
+          >
+          <span class="bullet">&bull;</span>
+          <a href="tel:+84343979214">0343 979 214</a>
+          <span class="bullet">&bull;</span>
+          <a
+            href="https://www.linkedin.com/in/nhan-luu-hoang/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >linkedin.com/in/nhan-luu-hoang</a
+          >
+        </div>
+      </header>
+
+      <main>
+        <!-- SUMMARY -->
+        <section class="resume-section">
+          <h2 class="resume-section-title">Summary</h2>
+          <p class="summary-text">
+            With a strong foundation in programming and software development, I
+            aim to become a professional software engineer at a leading
+            technology company. I have 6 years of experience in server-side
+            programming, specializing in building cutting-edge Golang and
+            Node.js microservices. I excel in designing scalable,
+            domain-oriented, and event-driven architectures for large-scale
+            systems, particularly in Real Estate, E-commerce, and ERP domains. I
+            strongly embrace a DevOps culture, taking full ownership of the
+            design, build, and operation of my services to improve availability,
+            scalability, latency, and efficiency. Passionate about engineering
+            excellence, I continuously explore cloud-native technologies (GCP,
+            AWS, GKE, Istio), full end-to-end observability, and data-driven
+            product development. In the long term, I strive to grow into a
+            Technical Architect role — mentoring teams, setting engineering
+            standards, and building meaningful products that impact millions of
+            users.
+          </p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="resume-section">
+          <h2 class="resume-section-title">Experience</h2>
+
+          <!-- LAIDON Vietnam -->
+          <div class="resume-entry">
+            <div class="entry-header">
+              <span class="entry-left-bold">LAIDON Vietnam</span>
+              <span class="entry-right-bold">Ho Chi Minh City, Vietnam</span>
+            </div>
+            <div class="entry-sub-header">
+              <span class="entry-left-italic">Software Engineer</span>
+              <span class="entry-right-italic">June 2022 &ndash; Present</span>
+            </div>
+            <p class="entry-desc">
+              SimpleMDG provides a comprehensive governance process, including a
+              request management solution and a standardized approach to
+              validate Maintenance Requests at the process, control, and
+              attribute levels to prevent non-compliant data from becoming
+              operational and transactional.
+            </p>
+            <ul class="entry-list">
+              <li>
+                <strong>Architecture & Design:</strong> Designed and built
+                scalable, cost-optimized backend services to improve the
+                availability, scalability, latency, and efficiency of the
+                system.
+              </li>
+              <li>
+                <strong>Event-Driven Systems:</strong> Handled message queues
+                and asynchronous processing using Event Mesh to optimize data
+                retrieval efficiency, ensuring high performance and resiliency
+                after failures.
+              </li>
+              <li>
+                <strong>Observability & Operations:</strong> Embraced a DevOps
+                culture by designing audit logging mechanisms for all services.
+                Monitored and debugged complex production software to ensure
+                full end-to-end observability and system stability.
+              </li>
+              <li>
+                <strong>Product Development:</strong> Worked closely with
+                product managers to implement features and data pipelines,
+                exploring a data-driven approach to evaluate impact.
+              </li>
+              <li>
+                <strong>Database & Performance:</strong> Redesigned database
+                structures to reduce redundancy. Handled bulk data processing,
+                resolving long-standing performance bottlenecks.
+              </li>
+              <li>
+                <strong>CI/CD & DevOps:</strong> Managed deployment pipelines,
+                taking full responsibility for operating the services and
+                ensuring smooth continuous delivery.
+              </li>
+              <li>
+                <strong>Mentorship & Standards:</strong> Mentored junior
+                developers, improved overall engineering standards, and drove
+                code quality with 70% test coverage.
+              </li>
+              <li>
+                <strong>Planning:</strong> Planned and broke down tasks into
+                milestones, performed time estimation, and self-managed
+                workload.
+              </li>
+              <li>
+                <strong>Collaboration:</strong> Discussed with developers to
+                break down tasks and define the technical solutions to implement
+                features.
+              </li>
+              <li>
+                <strong>Documentation:</strong> Wrote detailed design
+                documentation for both new and existing features.
+              </li>
+              <li>
+                <strong>Feature Development:</strong> Data pipeline. Implemented
+                graph data structures and applied the Breadth-First Search (BFS)
+                algorithm for graph traversal and shortest-path discovery.
+              </li>
+              <li>
+                Utilized: Node.js, Microservices, SAP HANA, SAP Cloud, Message
+                Queue, Google Maps Platform (Team size: 20+).
+              </li>
+            </ul>
+          </div>
+
+          <!-- LIFULL Tech Vietnam -->
+          <div class="resume-entry">
+            <div class="entry-header">
+              <span class="entry-left-bold">LIFULL Tech Vietnam</span>
+              <span class="entry-right-bold">Ho Chi Minh City, Vietnam</span>
+            </div>
+            <div class="entry-sub-header">
+              <span class="entry-left-italic">Software Engineer</span>
+              <span class="entry-right-italic">June 2022</span>
+            </div>
+            <p class="entry-desc">
+              A real estate and housing information aggregation web service that
+              is Japan's top provider in terms of the number of available
+              properties. Worked as a Software Engineer to develop and deploy
+              both frontend and backend APIs.
+            </p>
+            <ul class="entry-list">
+              <li>
+                Explored and created new architectural designs geared towards
+                scale and high performance.
+              </li>
+              <li>
+                Integrated with AWS cloud services and third-party platforms to
+                extend system capabilities.
+              </li>
+              <li>
+                Implemented caching strategies and redesigned database
+                structures to handle large-scale traffic.
+              </li>
+              <li>
+                Developed server-side UI, CMS APIs for custom templates, and
+                core RESTful APIs.
+              </li>
+              <li>
+                Performed code reviews, improved unit test coverage to 60%, and
+                assisted in business requirement analysis and UML design.
+              </li>
+              <li>
+                Contributed to project scoping, work breakdowns, and effort
+                estimation within an Agile framework.
+              </li>
+              <li>
+                Utilized: PHP, Ruby on Rails, JS, AWS (EC2, RDS, SES, S3) (Team
+                size: 15+).
+              </li>
+            </ul>
+          </div>
+
+          <!-- gumi Viet Nam -->
+          <div class="resume-entry">
+            <div class="entry-header">
+              <span class="entry-left-bold">gumi Viet Nam</span>
+              <span class="entry-right-bold">Ho Chi Minh City, Vietnam</span>
+            </div>
+            <div class="entry-sub-header">
+              <span class="entry-left-italic">Full Stack Developer</span>
+              <span class="entry-right-italic">
+                January 2019 &ndash; June 2022
+              </span>
+            </div>
+            <p class="entry-desc">
+              Contributed to and led diverse software products, designing
+              features from administrative panels to core asynchronous
+              pipelines.
+            </p>
+
+            <!-- Project 1 -->
+            <div class="subproject-block">
+              <div class="subproject-title">
+                E-Commerce System (Project Leader & Full Stack Developer)
+              </div>
+              <ul class="entry-list">
+                <li>
+                  Led a team of 10 developers; interfaced directly with the
+                  client to discuss and translate business requirements.
+                </li>
+                <li>
+                  Built a robust orders management hierarchy (administrators,
+                  agents, and users) with comprehensive permission structures.
+                </li>
+                <li>
+                  Integrated VNPAY online payment gateway and set up real-time
+                  notification delivery via FCM.
+                </li>
+                <li>
+                  Developed administrative dashboards using Angular and RESTful
+                  API endpoints with Node.js.
+                </li>
+                <li>
+                  Configured Docker-based development environments, managed
+                  CI/CD pipelines, and registered applications on Google Play
+                  Store and Apple App Store.
+                </li>
+                <li>
+                  Utilized: Node.js, PostgreSQL, Angular, NativeScript,
+                  Firebase.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="subproject-block">
+              <div class="subproject-title">
+                Point & Gift Reward System (Full Stack Developer)
+              </div>
+              <ul class="entry-list">
+                <li>
+                  Built RESTful APIs with Node.js and point management panels
+                  with Vue.js.
+                </li>
+                <li>
+                  Configured FCM notifications and deployed services using AWS
+                  cloud structures.
+                </li>
+                <li>
+                  Utilized: PHP, Node.js, MySQL, Vue.js, AWS (EC2, RDS, S3, SNS)
+                  (Team size: 10+).
+                </li>
+              </ul>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="subproject-block">
+              <div class="subproject-title">
+                Intern Recruiting & Event Management System (Full Stack
+                Developer)
+              </div>
+              <ul class="entry-list">
+                <li>
+                  Developed administrative portals in Vue.js and backend RESTful
+                  APIs with Node.js.
+                </li>
+                <li>
+                  Engineered mass mailing templates and schedulers to coordinate
+                  event registration actions across multiple Japanese cities.
+                </li>
+                <li>
+                  Utilized: PHP, Node.js, MySQL, Vue.js, AWS (EC2, RDS, S3, SNS)
+                  (Team size: 10+).
+                </li>
+              </ul>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="subproject-block">
+              <div class="subproject-title">
+                In-house Corporate Resources Management System (Back End
+                Developer)
+              </div>
+              <ul class="entry-list">
+                <li>
+                  Developed company-wide booking and office resource management
+                  APIs and SSR frontends using Laravel/PHP.
+                </li>
+                <li>
+                  Led database migration tasks, transferring and sanitizing
+                  historical company data onto new schemas.
+                </li>
+                <li>
+                  Utilized: PHP, MySQL, HTML, CSS, JavaScript, AWS (EC2, RDS,
+                  SES, S3) (Team size: 10+).
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section class="resume-section">
+          <h2 class="resume-section-title">Technical Skills</h2>
+          <div class="skills-list">
+            <div class="skills-item">
+              <span class="skills-category">Frontend Technologies:</span> React,
+              Vue.js, Angular, Next.js, HTML5, CSS3, JavaScript (ES6+),
+              TypeScript
+            </div>
+            <div class="skills-item">
+              <span class="skills-category"
+                >Backend Languages & Frameworks:</span
+              >
+              Node.js (NestJS, Express), Go/Golang (Microservices), PHP
+              (Laravel, Yii), Ruby on Rails
+            </div>
+            <div class="skills-item">
+              <span class="skills-category">Databases & Storage:</span> MySQL,
+              PostgreSQL, SAP HANA, SAP Cloud, Redis, Firebase
+            </div>
+            <div class="skills-item">
+              <span class="skills-category">DevOps, Cloud & Tools:</span>
+              Docker, Linux, Git, GitHub, GitLab, Jira, AWS (EC2, RDS, SES, S3,
+              SNS, etc.), GCP, GKE, Istio, Event Mesh, CI/CD pipelines
+            </div>
+          </div>
+        </section>
+
+        <!-- CAPABILITIES & COMPETENCIES -->
+        <section class="resume-section">
+          <h2 class="resume-section-title">Capabilities & Competencies</h2>
+          <div class="capabilities-grid">
+            <div class="capability-card">
+              <strong>Complex Problem Solver:</strong> Proven ability to analyze
+              and resolve complex technical issues by identifying root causes,
+              implementing robust solutions, and optimizing system performance.
+            </div>
+            <div class="capability-card">
+              <strong>Leadership & Management:</strong> Experienced in leading
+              dev teams, organizing sprints, planning timelines, and delivering
+              high-quality products under tight milestones.
+            </div>
+            <div class="capability-card">
+              <strong>Team Collaboration:</strong> Solid experience in
+              multi-disciplinary Agile teams (10-20+ members) ensuring clear
+              developer communications and technical synergy.
+            </div>
+            <div class="capability-card">
+              <strong>Research & Innovation:</strong> Constantly exploring and
+              integrating state-of-the-art tools, database systems, and
+              architectural patterns to address requirements.
+            </div>
+            <div class="capability-card">
+              <strong>Remote-First Operations:</strong> High self-motivation and
+              discipline, maintaining transparency, accountability, and strong
+              performance in remote environments.
+            </div>
+            <div class="capability-card">
+              <strong>Technical Mentoring:</strong> Dedicated to coaching junior
+              engineers, establishing guidelines, conducting thorough code
+              reviews, and raising test coverage.
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Interactive JS Functionality -->
+    <script>
+      // Initialize preferences from localStorage
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("nhan-cv-theme") || "light";
+        const savedFont = localStorage.getItem("nhan-cv-font") || "serif";
+        const savedAccent = localStorage.getItem("nhan-cv-accent") || "black";
+
+        setTheme(savedTheme);
+        setFontFamily(savedFont);
+        setAccent(savedAccent);
+      });
+
+      // Font Family Toggle
+      function setFontFamily(type) {
+        const btnSerif = document.getElementById("btn-font-serif");
+        const btnSans = document.getElementById("btn-font-sans");
+
+        if (type === "sans") {
+          document.body.classList.add("sans-font");
+          btnSans.classList.add("active");
+          btnSerif.classList.remove("active");
+          localStorage.setItem("nhan-cv-font", "sans");
+        } else {
+          document.body.classList.remove("sans-font");
+          btnSerif.classList.add("active");
+          btnSans.classList.remove("active");
+          localStorage.setItem("nhan-cv-font", "serif");
+        }
+      }
+
+      // Theme Toggle
+      function setTheme(theme) {
+        const btnLight = document.getElementById("btn-theme-light");
+        const btnDark = document.getElementById("btn-theme-dark");
+
+        if (theme === "dark") {
+          document.body.classList.add("dark-theme");
+          btnDark.classList.add("active");
+          btnLight.classList.remove("active");
+          localStorage.setItem("nhan-cv-theme", "dark");
+        } else {
+          document.body.classList.remove("dark-theme");
+          btnLight.classList.add("active");
+          btnDark.classList.remove("active");
+          localStorage.setItem("nhan-cv-theme", "light");
+        }
+      }
+
+      // Accent Style Toggle
+      function setAccent(accent) {
+        const dots = {
+          black: document.getElementById("dot-black"),
+          crimson: document.getElementById("dot-crimson"),
+          navy: document.getElementById("dot-navy"),
+        };
+
+        const colors = {
+          black: "var(--accent-black)",
+          crimson: "var(--accent-crimson)",
+          navy: "var(--accent-navy)",
+        };
+
+        // Remove active class from all dots
+        Object.values(dots).forEach((dot) => {
+          if (dot) dot.classList.remove("active");
+        });
+
+        // Set active dot
+        if (dots[accent]) {
+          dots[accent].classList.add("active");
+        }
+
+        // Apply style to document
+        document.documentElement.style.setProperty(
+          "--accent-color",
+          colors[accent],
+        );
+        localStorage.setItem("nhan-cv-accent", accent);
+      }
+    </script>
+  </body>
+</html>
